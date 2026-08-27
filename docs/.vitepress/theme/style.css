@@ -1,0 +1,79 @@
+/* ============================================================
+ * DevKB 主题骨架 —— 玻璃拟态 + 浅蓝科技风（主色 #1770fc）
+ * Phase 1：仅定义设计变量与基础样式，供后续组件复用。
+ * ============================================================ */
+
+:root {
+  /* 品牌色 */
+  --kb-primary: #1770fc;
+  --kb-primary-2: #3b86ff;
+  --kb-primary-3: #6aa3ff;
+  --kb-primary-soft: rgba(23, 112, 252, 0.12);
+
+  /* 背景与表面 */
+  --kb-bg: #f4f8ff;
+  --kb-surface: rgba(255, 255, 255, 0.72);
+  --kb-surface-solid: #ffffff;
+  --kb-border: rgba(23, 112, 252, 0.18);
+
+  /* 文本 */
+  --kb-text: #1f2a44;
+  --kb-text-soft: #5a6b8c;
+
+  /* 形状与阴影 */
+  --kb-radius: 16px;
+  --kb-radius-sm: 10px;
+  --kb-shadow: 0 8px 30px rgba(23, 112, 252, 0.10);
+  --kb-shadow-sm: 0 4px 14px rgba(23, 112, 252, 0.08);
+}
+
+/* 覆盖 VitePress 默认主题变量 */
+:root {
+  --vp-c-brand-1: var(--kb-primary);
+  --vp-c-brand-2: var(--kb-primary-2);
+  --vp-c-brand-3: var(--kb-primary-3);
+  --vp-c-brand-soft: var(--kb-primary-soft);
+
+  --vp-c-bg: var(--kb-bg);
+  --vp-c-bg-soft: #eaf1ff;
+  --vp-c-bg-alt: #ffffff;
+
+  --vp-c-text-1: var(--kb-text);
+  --vp-c-text-2: var(--kb-text-soft);
+  --vp-c-divider: var(--kb-border);
+}
+
+/* 全局背景：浅蓝科技风渐变光晕 */
+body {
+  background:
+    radial-gradient(1200px 600px at 82% -12%, rgba(23, 112, 252, 0.10), transparent 60%),
+    radial-gradient(900px 520px at -8% 6%, rgba(23, 112, 252, 0.06), transparent 55%),
+    var(--kb-bg);
+  background-attachment: fixed;
+  color: var(--kb-text);
+}
+
+/* 玻璃拟态卡片基类（后续组件统一复用） */
+.kb-glass {
+  background: var(--kb-surface);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--kb-border);
+  border-radius: var(--kb-radius);
+  box-shadow: var(--kb-shadow);
+}
+
+/* 首页 Hero 区文字（Phase 5 将在其下挂载 HeroSearch） */
+.VPHero .name,
+.VPHero .text {
+  color: var(--kb-text);
+}
+.VPHero .tagline {
+  color: var(--kb-text-soft);
+}
+
+/* 顶部导航品牌色聚焦 */
+.VPNavBarTitle .title {
+  color: var(--kb-primary);
+  font-weight: 700;
+}

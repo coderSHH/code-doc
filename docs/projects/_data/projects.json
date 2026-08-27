@@ -1,0 +1,20 @@
+[
+  {
+    "slug": "react-admin",
+    "title": "React Admin 中后台脚手架",
+    "tags": ["react", "vite", "antd", "admin"],
+    "cover": "",
+    "repo": "https://github.com/example/react-admin",
+    "summary": "基于 React + Vite + Ant Design 的中后台脚手架，内置权限路由、动态菜单与请求封装。",
+    "date": "2026-08-20"
+  },
+  {
+    "slug": "kb-search-engine",
+    "title": "轻量本地全文检索引擎",
+    "tags": ["search", "inverted-index", "go"],
+    "cover": "",
+    "repo": "https://github.com/example/kb-search-engine",
+    "summary": "用 Go 实现的倒排索引 + BM25 排序的本地搜索引擎，单二进制、零依赖，适合小团队文档检索。",
+    "date": "2026-08-20"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "id": "js-debounce",
+    "title": "防抖 debounce",
+    "language": "javascript",
+    "tags": ["javascript", "utils", "performance"],
+    "description": "高频触发（输入/resize）时延迟执行，停止触发 wait 毫秒后才真正调用。",
+    "code": "function debounce(fn, wait = 300) {\n  let timer = null\n  return function (...args) {\n    clearTimeout(timer)\n    timer = setTimeout(() => fn.apply(this, args), wait)\n  }\n}\n\n// 使用\nconst onInput = debounce((e) => console.log(e.target.value), 400)\ninput.addEventListener('input', onInput)"
+  },
+  {
+    "id": "py-flatten",
+    "title": "递归展平嵌套列表",
+    "language": "python",
+    "tags": ["python", "recursion", "list"],
+    "description": "把任意层级的嵌套 list 展平成一维列表。",
+    "code": "def flatten(items):\n    result = []\n    for x in items:\n        if isinstance(x, (list, tuple)):\n            result.extend(flatten(x))\n        else:\n            result.append(x)\n    return result\n\nprint(flatten([1, [2, [3, 4]], 5]))  # [1, 2, 3, 4, 5]"
+  },
+  {
+    "id": "css-glass-card",
+    "title": "玻璃拟态卡片",
+    "language": "css",
+    "tags": ["css", "glassmorphism", "ui"],
+    "description": "半透明背景 + 背景模糊 + 细边框，浅蓝科技风常用卡片样式。",
+    "code": ".glass-card {\n  background: rgba(255, 255, 255, 0.72);\n  backdrop-filter: blur(14px);\n  -webkit-backdrop-filter: blur(14px);\n  border: 1px solid rgba(23, 112, 252, 0.18);\n  border-radius: 16px;\n  box-shadow: 0 8px 30px rgba(23, 112, 252, 0.10);\n}"
+  },
+  {
+    "id": "sql-mysql-page",
+    "title": "MySQL 深分页优化",
+    "language": "sql",
+    "tags": ["sql", "mysql", "pagination", "performance"],
+    "description": "LIMIT offset, size 在 offset 很大时很慢，用覆盖索引 + 游标（上一页最大 id）改写。",
+    "code": "-- 慢：offset 越大越慢\nSELECT * FROM t_order ORDER BY id LIMIT 100000, 20;\n\n-- 快：游标分页（记住上一页最后一条的 id）\nSELECT * FROM t_order WHERE id > :last_id ORDER BY id LIMIT 20;"
+  }
+]
